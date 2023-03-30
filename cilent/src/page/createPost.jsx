@@ -15,8 +15,8 @@ const CreatePost = () => {
   const [generatingImg, setGeneratingImg] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const generateImage = () => {};
-  const handleSubmit = () => {};
+  const generateImage = () => { };
+  const handleSubmit = () => { };
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
@@ -40,9 +40,10 @@ const CreatePost = () => {
             labelName="Your Name"
             type="text"
             name="name"
-            placeholder="John Smith"
+            placeholder="Rahul Tanwar"
             value={form.name}
             handleChange={handleChange}
+            autoComplete="off"
           />
           <FormField
             labelName="Prompt"
