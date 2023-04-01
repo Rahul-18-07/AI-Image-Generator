@@ -12,43 +12,43 @@ const Home = () => {
     const fetchPosts = async () => {
       setLoading(true);
       try {
-        const response = await fetch("http://localhost:3000/api/v1/post", {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-
-        })
+        const response = await fetch(
+          "https://dalle-e-clone.onrender.com/api/v1/post",
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
         if (response.ok) {
           const result = await response.json();
           setAllPosts(result.data.reverse());
         }
-      }
-      catch (error) {
+      } catch (error) {
         alert("error");
-      }
-      finally {
+      } finally {
         setLoading(false);
-
       }
-
-    }
+    };
     fetchPosts();
   }, []);
 
   const handleSearchChange = (e) => {
-
     clearTimeout(searchTimeout);
     setSearchText(e.target.value);
 
     setSearchTimeout(
       setTimeout(() => {
-        const searchResult = allPosts.filter((item) => item.name.toLowerCase().includes(searchText.toLowerCase()) || item.prompt.toLowerCase().includes(searchText.toLowerCase()));
+        const searchResult = allPosts.filter(
+          (item) =>
+            item.name.toLowerCase().includes(searchText.toLowerCase()) ||
+            item.prompt.toLowerCase().includes(searchText.toLowerCase())
+        );
         setSearchedResults(searchResult);
-      }, 500),
+      }, 500)
     );
-
-  }
+  };
 
   return (
     <section>
@@ -87,7 +87,10 @@ const Home = () => {
 
             <div className=" grid lg:grid-cols-4 sm:grid-cols-3 xs:grid-cols-2 gid-cols-3 gap-3">
               {searchText ? (
-                <RenderCards data={searchResult} title="No Searched Result Found" />
+                <RenderCards
+                  data={searchResult}
+                  title="No Searched Result Found"
+                />
               ) : (
                 <>
                   <RenderCards data={allPosts} title="No data now" />
