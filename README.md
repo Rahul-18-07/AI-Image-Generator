@@ -1,4 +1,3 @@
-GitHub repository : `https://github.com/Rahul-18-07/AI-Image-Generator`
 Working Link of Website : `https://imggenrator.netlify.app/`
 
 # AI Image Generator
