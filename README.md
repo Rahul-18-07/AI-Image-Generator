@@ -1,4 +1,4 @@
-Working Link of Website : `https://imggenrator.netlify.app/`
+Working Link of Website : [AI Image Generator](https://imggenrator.netlify.app/)
 
 # AI Image Generator
 
